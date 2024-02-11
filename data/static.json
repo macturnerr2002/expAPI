@@ -1,1 +1,22 @@
 
+{
+
+
+    "arenas":{
+        "London Lightning": "Budweiser Gardens"
+    },
+    "short":{
+        "London Lightning": "LDN",
+        "Sudbury Five": "SUD",
+        "KW Titans": "KW",
+        "Montreal Toundra": "MTL",
+        "Newfoundland Rogues": "NFLD"
+    },
+    "logos":{
+        "London Lightning": "/img/logo/ldn.png",
+        "Sudbury Five": "/img/logo/sud.png",
+        "KW Titans": "/img/logo/kw.png",
+        "Montreal Toundra": "/img/logo/mtl.png",
+        "Newfoundland Rogues": "/img/logo/mtl.png"
+    }
+}
