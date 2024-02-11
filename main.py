@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import re
+import os
 
 
 ## fixing the URLLIB3 Error
@@ -24,6 +25,20 @@ headers = {
 
 
 now = date.today() # current date
+
+# Ensure directory exists
+def ensure_directory(path):
+    file = open(path, 'w+')
+
+# Call ensure_directory at the start of the application to create the needed directories
+ensure_directory('./data/league_standings.json')
+ensure_directory('./data/admin.json')
+ensure_directory('./data/record_stats.json')
+ensure_directory('./data/roster_1.json')
+ensure_directory('./data/roster_2.json')
+ensure_directory('./data/schedule_results.json')
+ensure_directory('./data/static.json')
+ensure_directory('./data/team_stats.json')
 
 
 def getScheduleData():
@@ -366,7 +381,8 @@ def saveFile():
     }
     with open('./data/compiled.json', 'w') as json_file:
          json.dump(dataObj, json_file)
-
+    with open('./public/json/compiled.json', 'w') as json_file:
+         json.dump(dataObj, json_file)
 
 
 def fetch_data():
@@ -403,7 +419,7 @@ def forced_Fetch():
         return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True)
 
 
 
